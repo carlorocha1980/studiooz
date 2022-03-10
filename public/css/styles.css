@@ -1,0 +1,87 @@
+body{
+    color: #444;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    display: flex;
+    height: 96vh;
+}
+
+/* # é um elemento, o elemento usa-se # para e é único elemento, diferente da "class", abaixo que poderá ser reutilizada. 
+As definições colocada aqui serão aplicadas por padrão no App, util para organização de Flavors*/
+
+#app{
+    width: auto;
+    margin: auto;
+    /*Box-Shadwon é colocar uma sombra dando uma impressão de qualidade
+    primeiro px é para direita, segundo para baixo, terceiro difusão*/
+    box-shadow: 4px 4px 20px #888;
+    padding: 20px;
+}
+
+/* para definir o padrão os elementos individuais no index.html, mantendo um bom padrão por elemento/item */
+
+h3{
+    margin: 4px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: normal;
+}
+
+input{
+    width: auto;
+    margin: 4px;
+    padding: 4px;
+    font-size: small;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+input:hover{
+    opacity: 0.95;
+    cursor: pointer;
+}
+
+button{
+    padding: 4px;
+    margin: auto;
+    border-radius: 8px;
+    border: none;
+    outline: invert;
+    background-color: darkslategray;
+    color: aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button:hover{
+    opacity: 0.75;
+    cursor: pointer;
+}
+
+/*Daqui para baixo vamos utilizar somente "class" para integrar com Desing System*/
+
+.center{
+    /*tudo que tiver um "ponto" na frente será uma "class" que poderá ser utilizado em qualquer campo para fazer a atividade relativa a mesma*/
+    text-align: center;
+}
+
+.startHidden{
+    display: none;
+}
+
+.primaryButton{
+    background-color: darkslategrey;
+    color: aliceblue;
+}
+.secondaryButton{
+    background-color: aliceblue;
+    color: darkslategrey;  
+}
+
+#loading{
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc (50% - 200px);
+    z-index: 1;
+}
+
+p{
+    margin: 4px;
+}

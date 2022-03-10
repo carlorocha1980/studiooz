@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>StudioOz</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Referente ao CSS que definirá toda o estilo do Site-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!--O link abaixo serve para adiciona o ícone ao topo do browser-->
+    <link rel="shortcut icon" href="img/studiooz_logo.png" type="image/x-icon">
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!--Está atividade serve para colocar o ícone na Primeira Divisão do App, ou seja, header-->
+        <div class="center">
+            <img src="img/images.png">
+    </div>
+
+    <!--Feedback de loading para o usuário logando!-->
+    <!--alt é um recurso de acessibidade, pode ser utilziado de forma auditiva-->
+    <div id="loading">
+        <img src="img/loading.gif" alt="Loading Animation">
+    </div>
+
+    <!--Conteúdo destinado para usuários não autenticados-->
+    <div id="auth" class="center">
+        <!--Esta atividade criará o autenticador propriamente dito, que será utilizado pelo Firebase-->
+        <form id="authForm">
+            <!--h3 é utitilizado como titulo, neste caso é h3 terceira div-->
+            <!--id para o h3 será utilizado para ações do JavaScript, sem isso não se usa o JS-->
+            <h3 id="authFormTitle">Acesse sua conta para continuar!</h3>
+            
+            <p <label for="email"> E-mail: </label>
+            <input type="email" placeholder="Digite o seu e-mail" id="email"></p>
+            
+            <!--No "input" o parametro "type" define o tipo de conteúdo que será aplicado, permitindo pre-valição dos campos-->
+            <!--Placeholder é o texto que ficará dentro do box do input-->    
+            
+            <p <label for="password"> Senha: </label>
+            <input type="password" placeholder="Digite o sua senha" id="password"></p>
+            
+            <button type="submit" id="submitAuthForm">Acessar</button>
+        </form>
+        
+        <!--Campo para alteranar entre a tela de login e de casdastro-->
+            <!--toggle é utilizado para fazer uma chamada neste cenário para um JS específico, porém pode ser usado para features-->
+            <!--Pode-ser criar uma Class aternativa para definir as cores pelos CSS-->
+            <p id="register">
+                Não possui usuário?
+                <button onclick="toggleToRegister()" class="secondaryButton">Cadastrar conta</button>
+            </p>
+            <!--Pode-se criar uma classe para qualquer atividade a ser definida no CSS, nesta caso a Start Hidden é para não apresentar por default-->
+            <!--toggle é utilizado para fazer uma chamada neste cenário para um JS específico, porém pode ser usado para features-->
+            <!--Pode-ser criar uma Class aternativa para definir as cores pelos CSS-->
+            <p id="access" class="startHidden">
+                Já possui usuário?
+                <button onclick="toggleToAccess()" class="secondaryButton">Acessar</button>
+            </p>
+        </div>
+
+        <!--Conteúdo destinado para usuários não autenticados-->
+        <div id="userContent" class="startHidden">
+            <hr>
+            <div id="userInfo" class="center">
+                <p>Usuário Autenticado</p>
+                <button onclick="signOut()" class="primaryButton">Sair</button>
+            </div>
+        </div>
+
+        <!--Recursos do Firebase-->
+        <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+        
+        <!--Nossa programação em JavaScript-->
+        <script src="js/firebase.js"></script>
+        <script src="js/auth.js"></script>
+        <script src="js/utils.js"></script>
+</body>
+</html
